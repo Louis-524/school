@@ -370,9 +370,9 @@ function connect($decide,$val){
                           echo '<table class="alt" style=" background:#3C3C3C; ">
                                         <tbody style=" background:#3C3C3C; ">
                                             <tr style=" background:#3C3C3C; ">';
-                          if($row['coupon_type_id']==1)
+                          if($row['coupon_type_id']==1){
                           echo '<td rowspan="1" style="width:30%;border-color:#3C3C3C;color:#3C3C3C;text-align:center;display: table-cell;vertical-align:middle;"><img style="width:100px;height:100px;" src="../../image/discounts.jpg" alt="" /></td>';
-                          else
+                          }else{
                           echo '<td rowspan="1" style="width:30%;border-color:#3C3C3C;color:#3C3C3C;text-align:center;display: table-cell;vertical-align:middle;"><img style="width:100px;height:100px;" src="../../image/coupons.jpg" alt="" /></td>';                      
 
 
@@ -390,7 +390,7 @@ function connect($decide,$val){
                                         </tbody>
                                     </table>
                                     <HR color="#FFFFFF";size="5";width="80%";align="center">';
-                              }
+                          }}
                         break;
                         case 'detail':  //select all  store
                         $db=new PDOConfig;
