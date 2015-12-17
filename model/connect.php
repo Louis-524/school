@@ -10,7 +10,13 @@ function  condb(){
     $query = $db->prepare($sql);
     $query->execute();
     $result = $query->fetchall(PDO::FETCH_OBJ);
-    $id2=$id;
+}
+function storesql(){
+                        $db=new PDOConfig;
+                        $id=$_SESSION['mem_id'];
+                        $sql = "SELECT  store_name,store_id,imgtype FROM store";
+                        $query = $db->prepare($sql);
+                        $query->execute();
 }
 function connect($decide,$val){
   switch ($decide) {
@@ -54,11 +60,7 @@ function connect($decide,$val){
     case 'store':
         switch ($val) {
                         case 'list':  //select all  store
-                        $db=new PDOConfig;
-                        $id=$_SESSION['mem_id'];
-                        $sql = "SELECT  store_name,store_id,imgtype FROM store";
-                        $query = $db->prepare($sql);
-                        $query->execute();
+                        storesql();
                         while($row=$query->fetch(PDO::FETCH_ASSOC)){
                               echo '<li ><a href="../store/store.php?id='.$row['store_id'].'">';
                               echo '<img src="../../../store/StoreManage/picture/store/'.$row['imgtype'].'" height="75px">';
