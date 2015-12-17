@@ -3,9 +3,7 @@
 include("../../model/connectDB.php");
 date_default_timezone_set('Asia/Taipei');
 $id=$_SESSION['mem_id'] ;
-function connect($decide,$val){
-  switch ($decide) {
-    case 'member':
+function  condb(){
     $db=new PDOConfig;
     
     $sql = "SELECT * from member where mem_id =$id";
@@ -13,6 +11,11 @@ function connect($decide,$val){
     $query->execute();
     $result = $query->fetchall(PDO::FETCH_OBJ);
     $id2=$id;
+}
+function connect($decide,$val){
+  switch ($decide) {
+    case 'member':
+        condb();
 
         switch ($val) {
                         case 'name':
