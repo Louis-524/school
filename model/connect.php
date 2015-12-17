@@ -308,7 +308,7 @@ function connect($decide,$val){
                         $db=new PDOConfig;
                         $id=$_SESSION['mem_id'];
                         $store_id=$_SESSION['storeid'];
-                        $today=date("Y-m-d");
+                        $today = date("Y-m-d");
 
                         $sql = "SELECT  distinct(coupon_name),start_date,end_date,use_enddate,ps,coupon_id,e.coupon_type_id
                                 FROM member as a join shopdetail as b on a.mem_id=b.mem_id 
