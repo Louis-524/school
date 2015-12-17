@@ -2,11 +2,12 @@
 
 include("../../model/connectDB.php");
 date_default_timezone_set('Asia/Taipei');
+$id=$_SESSION['mem_id'] ;
 function connect($decide,$val){
   switch ($decide) {
     case 'member':
     $db=new PDOConfig;
-    $id=$_SESSION['mem_id'] ;
+    
     $sql = "SELECT * from member where mem_id =$id";
     $query = $db->prepare($sql);
     $query->execute();
