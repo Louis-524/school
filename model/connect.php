@@ -523,7 +523,6 @@ function photo($decide){
 
                           case 'view':
                           $db=new PDOConfig;
-                          $id=$_SESSION['mem_id'];
                           $sql = "SELECT imgtype FROM `activity` where CURDATE() between start_date and end_date LIMIT 3";
                           $query = $db->prepare($sql);
                           $query->execute();

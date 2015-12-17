@@ -2,12 +2,12 @@
 //取得所有傳送過來的值 判斷是用get或post
 if($_POST){
 foreach ($_POST as $key => $value) {
-     $$key=$value;
+     $key=$value;
     }
 }
 else {
 foreach ($_GET as $key => $value) {
-     $$key=$value;
+     $key=$value;
     }
 }
 class PDOConfig extends PDO {

@@ -2,8 +2,10 @@
   include("../../../model/connectDB.php");
     $db=new PDOConfig;
     session_start(true);
-switch ($decide) {
-  case 'select':
+    if($decide=='select'){
+        
+    
+
     if(isset($username)&&isset($password))
     {
     $sql = "SELECT name,mem_id from member where cellphone =:username and password =:password";
@@ -26,9 +28,8 @@ switch ($decide) {
     echo false;
 
   }
-    break;
-
-  default:
+    }
+ else {
       if(isset($name)&&isset($password)&&isset($cellphone)&&isset($gender)&&isset($password2)&&$password==$password2)
       {
         $sql ="select cellphone from member where cellphone =:cellphone";
@@ -60,7 +61,7 @@ switch ($decide) {
       else{
         echo "bo";
       }
-    break;
+  
 }
 
 
