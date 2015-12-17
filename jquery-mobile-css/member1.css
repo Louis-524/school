@@ -1,0 +1,228 @@
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
+
+/*
+	Identity by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Reset */
+
+/* Icon */
+
+	.icon {
+		text-decoration: none;
+		position: relative;
+		border-bottom: none;
+	}
+
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		.icon > .label {
+			display: none;
+		}
+
+/* List */
+
+	ol {
+		list-style: decimal;
+		margin: 0 0 1.5em 0;
+		padding-left: 1.25em;
+	}
+
+		ol li {
+			padding-left: 0.25em;
+		}
+
+	ul {
+		list-style: disc;
+		margin: 0 0 1.5em 0;
+		padding-left: 1em;
+	}
+
+		ul li {
+			padding-left: 0.5em;
+		}
+
+		ul.alt {
+			list-style: none;
+			padding-left: 0;
+		}
+
+			ul.alt li {
+				border-top: solid 1px #c8cccf;
+				padding: 0.5em 0;
+			}
+
+				ul.alt li:first-child {
+					border-top: 0;
+					padding-top: 0;
+				}
+
+		ul.icons {
+			cursor: default;
+			list-style: none;
+			padding-left: 0;
+			padding-top:20%;
+			margin-top: -0.675em;
+		}
+
+		
+				
+				
+		ul.icons {
+			cursor: default;
+			list-style: none;
+			padding-left: 0;
+			padding-top:50%;
+			margin-top: -0.675em;
+		}
+		
+		
+		
+		@media screen and (max-width: 480px) {			
+			ul.icons li {
+				display: inline-block;
+				padding: 0.675em 0.5em;}
+				
+			span.word{
+			font-size:40px;
+			}	
+				
+		}
+				
+
+
+           span.word{
+			font-size:25px;
+			}
+			
+			
+			ul.icons li {
+				display: inline-block;
+				}
+
+				ul.icons li a {
+			-moz-transition: background-color 0.25s ease-in-out;
+			-webkit-transition: background-color 0.25s ease-in-out;
+			-ms-transition: background-color 0.25s ease-in-out;
+			transition: background-color 0.25s ease-in-out;
+			display: inline-block;
+					position: relative;
+
+					width: 3.75em;
+					height: 3.75em;
+					border-radius: 100%;
+					border: solid 2.5px #c8cccf;
+					line-height: 3.5em;
+					overflow: hidden;
+					text-align: center;
+					text-indent: 3.5em;
+					white-space: nowrap;
+					
+				}
+
+		
+		@media screen and (max-width: 480px) {		
+					ul.icons li a {
+			-moz-transition: background-color 0.25s ease-in-out;
+			-webkit-transition: background-color 0.25s ease-in-out;
+			-ms-transition: background-color 0.25s ease-in-out;
+			transition: background-color 0.25s ease-in-out;
+			display: inline-block;
+			width: 2.75em;
+			height: 2.75em;
+			line-height: 3em;
+			text-align: center;
+			border: 0;
+			border-radius: 100%;
+			color: #aaa;
+		}
+				}
+				
+				
+					ul.icons li a:before {
+						-moz-osx-font-smoothing: grayscale;
+						-webkit-font-smoothing: antialiased;
+						font-family: FontAwesome;
+						font-style: normal;
+						font-weight: normal;
+						text-transform: none !important;
+					}
+
+					ul.icons li a:before {
+						color: #ffffff;
+						text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf, 0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf;
+					}
+
+					ul.icons li a:hover:before {
+						text-shadow: 1.25px 0px 0px #ff7496, -1.25px 0px 0px #ff7496, 0px 1.25px 0px #ff7496, 0px -1.25px 0px #ff7496;
+					}
+
+					ul.icons li a:before {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: inherit;
+						height: inherit;
+						font-size: 1.85rem;
+						line-height: inherit;
+						text-align: center;
+						text-indent: 0;
+					}
+
+					ul.icons li a:hover {
+						border-color: #ff7496;
+					}
+
+
+			@media screen and (max-width: 480px) {
+
+				ul.icons li a:before {
+					font-size: 2rem;
+				}
+
+			}
+
+			a {
+		-moz-transition: color 0.2s ease, border-color 0.2s ease;
+		-webkit-transition: color 0.2s ease, border-color 0.2s ease;
+		-ms-transition: color 0.2s ease, border-color 0.2s ease;
+		transition: color 0.2s ease, border-color 0.2s ease;
+		color: inherit;
+		text-decoration: none;
+	}
+
+		a:before {
+			-moz-transition: color 0.2s ease, text-shadow 0.2s ease;
+			-webkit-transition: color 0.2s ease, text-shadow 0.2s ease;
+			-ms-transition: color 0.2s ease, text-shadow 0.2s ease;
+			transition: color 0.2s ease, text-shadow 0.2s ease;
+			 text-decoration:none;
+		}
+
+		a:hover {
+		 text-decoration:none;
+			color: #ff7496;
+		}
+		
+		
+		.image.fit {
+			display: block;
+			width: 100%;
+		}
+
+	.image {
+		position: relative;
+		display: inline-block;
+		border: 0;
+	}
