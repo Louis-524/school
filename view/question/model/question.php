@@ -16,8 +16,6 @@ switch ($decide) {
                     from questionnaire as a
                     JOIN question_bank as b on a.qst_id=b.qst_id
                     where a.qst_id = '$qst_type'  and CURDATE() between a.start_date-1 and a.end_date ";
-            //$qst_name=$result[0]->qst_name;
-            //echo $qst_name.$result[0]->opt_1;
             $query = $db->prepare($sql);
             $query->execute();
             $ans='';
@@ -98,77 +96,7 @@ switch ($decide) {
         echo "inster";
         break;
   default:
-  	if(isset($number))
-    {
-            $answerstr="answer";
-            $answerstr=$answerstr.$i;
-            $answer=$_GET[$answerstr];
-            $qst_id=$_GET['qstid'];
-            $qstbidstr="qstbid";
-            $qstbidstr=$qstbidstr.$i;
-            $qstb_id=$_GET[$qstbidstr];
-            $id=$_GET['qstid'];
-            $mem_id=$_SESSION['mem_id'];
-            date_default_timezone_set("Asia/Taipei");
-            $qd_date = date("Y-m-d");
-            $sqlg="SELECT reward_pt from questionnaire  where qst_id=$id";
-            $queryg = $db->prepare($sqlg);
-            $queryg->execute();
-            $resultg = $queryg->fetchall(PDO::FETCH_OBJ);
-            $reward_pt=$resultg[0]->reward_pt;
-           
-            
-            $sql = "INSERT INTO question_detail (mem_id, qst_id, qd_date, reward_pt ) VALUES ( :mem_id, :qst_id, :qd_date, :reward_pt)";
-            $query = $db->prepare($sql);
-            $query->execute(array('mem_id' => $mem_id ,'qst_id' => $qst_id,  'qd_date' => $qd_date , 'reward_pt' => $reward_pt));
-            $qd_id = $db->lastInsertId();
-        for ($i=1; $i<$number+1 ; $i++) {
-            $answerstr="answer";
-            $answerstr=$answerstr.$i;
-            $answer=$_GET[$answerstr];
-            $qst_id=$_GET['qstid'];
-            $qstbidstr="qstbid";
-            $qstbidstr=$qstbidstr.$i;
-            $qstb_id=$_GET[$qstbidstr];
-            $mem_id=$_SESSION['mem_id'];
-            date_default_timezone_set("Asia/Taipei");
-            $qst_date = date("Y-m-d");
-            $sql = "INSERT INTO qstnirdetail (qd_id,  qstb_id,  answer ) VALUES (:qd_id,  :qstb_id,  :answer);";
-            $query = $db->prepare($sql);
-            $query->execute(array('qd_id' => $qd_id, 'qstb_id' => $qstb_id , 'answer' => $answer));
-        }
-            $mem_id=$_SESSION['mem_id'];
-            $store_id=$_SESSION['storeid'];
-            $id=$_GET['qstid'];
-            $tablename="questionnaire";
-            date_default_timezone_set("Asia/Taipei");
-            $date = date("Y-m-d");
-            
-                $sqls = "SELECT store_id,mem_id,total_pt from point where store_id =:store_id and mem_id =:mem_id";
-                $querys = $db->prepare($sqls);
-                $querys->execute(array(':store_id' => $store_id,':mem_id' => $mem_id));
-                $results = $querys->fetchall(PDO::FETCH_OBJ);
-                if($results!=null)
-                {
-                    $total_pt=$results[0]->total_pt;
-                    $total_pt=$total_pt+$reward_pt;
-                    $sqlu ="UPDATE `point` SET total_pt = :total_pt WHERE mem_id = $mem_id and store_id = $store_id;";
-                    $queryu = $db->prepare($sqlu);
-                    $queryu->execute(array('total_pt' => $total_pt ));
-                }
-                else{
-                    $total_pt=$reward_pt;
-                    $sqli="INSERT INTO point (mem_id,store_id,total_pt ) VALUES (:mem_id,:store_id,:total_pt) ";
-                    $queryi = $db->prepare($sqli);
-                    $queryi->execute(array('mem_id' => $mem_id ,'store_id' => $store_id ,'total_pt' =>$total_pt));
-
-                }
-
-        echo true;
-    }
-    else {
-        echo "re";
-    }
+  	echo "error";
     break;
 }
 
